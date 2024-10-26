@@ -19,7 +19,7 @@ import com.rancho_smart.ms_usuario.entity.Usuario;
 import com.rancho_smart.ms_usuario.service.UsuarioService;
 
 @RestController
-@RequestMapping(path = "/usuario")
+@RequestMapping(path = "/usuarios")
 public class UsuarioRESTController {
     
     @Autowired
