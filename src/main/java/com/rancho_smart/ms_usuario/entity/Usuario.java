@@ -35,18 +35,21 @@ public class Usuario {
     @Column(name = "FECHA_REGISTRO")
     private LocalDateTime fechaRegistro;
 
-    @Column(name = "URL_FOTO")
-    private String urlFoto;
+    @Column(name = "FOTO")
+    private byte[] foto;
 
-    public Usuario() {
-    }
-
-    public Usuario(String nombre, String apellido, String email, LocalDateTime fechaRegistro, String urlFoto) {
+    public Usuario(String nombre, String apellido, String email, String telefono, String direccion,
+            LocalDateTime fechaRegistro, byte[] foto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.telefono = telefono;
+        this.direccion = direccion;
         this.fechaRegistro = fechaRegistro;
-        this.urlFoto = urlFoto;
+        this.foto = foto;
+    }
+
+    public Usuario() {
     }
 
     public Long getIdUsuario() {
@@ -89,11 +92,28 @@ public class Usuario {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public String getUrlFoto() {
-        return urlFoto;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setUrlFoto(String urlFoto) {
-        this.urlFoto = urlFoto;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
 }
