@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -63,5 +64,10 @@ public class UsuarioRESTController {
             this.usuarioService.deleteUsuario(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
+    }
+
+    @PostMapping("/ids")
+    public List<Usuario> getUsersByIds(@RequestBody List<Long> ids) {
+        return this.usuarioService.getUsuariosByIds(ids);
     }
 }
